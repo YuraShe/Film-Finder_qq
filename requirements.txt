@@ -3,5 +3,4 @@ flask_sqlalchemy
 openai
 fastembed
 chromadb
-
-
+sentence-transformers
