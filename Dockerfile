@@ -15,10 +15,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /workspace
 
-ENV FLASK_APP=main.py
+ENV FLASK_APP=app.main
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_RUN_PORT=5001
 
 EXPOSE 5001
 
-CMD ["python", "main.py"]
+CMD ["python", "-m", "app.main"]
