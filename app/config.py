@@ -19,7 +19,7 @@ SYSTEM_PROMPT_PATH = os.getenv(
 
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    f"sqlite:///{(BASE_DIR.parent / 'movie_finder.db').as_posix()}"
+    "sqlite:////tmp/movie_finder.db"
 )
 
 CHROMA_PATH = os.getenv("CHROMA_PATH", "../chroma_movies")

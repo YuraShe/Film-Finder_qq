@@ -2,7 +2,10 @@ import chromadb
 from sentence_transformers import SentenceTransformer
 from typing import Optional, Any
 
-from . import config
+try:
+    from . import config
+except ImportError:  # pragma: no cover - fallback for direct script-style imports
+    import config
 
 _embedder: Optional[SentenceTransformer] = None
 _chroma_client: Optional[Any] = None

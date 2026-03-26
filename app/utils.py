@@ -5,7 +5,10 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import quote
 
-from . import config
+try:
+    from . import config
+except ImportError:  # pragma: no cover - fallback for direct script-style imports
+    import config
 
 
 def utcnow() -> datetime:
