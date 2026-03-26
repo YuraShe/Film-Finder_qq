@@ -2,7 +2,7 @@ import chromadb
 from sentence_transformers import SentenceTransformer
 from typing import Optional, Any
 
-import config
+from . import config
 
 _embedder: Optional[SentenceTransformer] = None
 _chroma_client: Optional[Any] = None
