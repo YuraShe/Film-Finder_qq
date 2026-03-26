@@ -55,6 +55,7 @@ Using this dataset for mapping keywords to film
    - `pip install -r requirements.txt`
 4. (Optional) Customize environment variables:
    - `SECRET_KEY`, `OPENAI_BASE_URL`, `OPENAI_API_KEY`, `MODEL_NAME`, `TEMPERATURE`, `MAX_TOKENS`, `SYSTEM_PROMPT_PATH`, `DATABASE_URL`
+   - for local development use `.env` with `python-dotenv`
 5. (Optional) Ingest movie data into ChromaDB:
    - `python -m app.scripts.ingest_movies`
 6. Run app:
@@ -62,6 +63,7 @@ Using this dataset for mapping keywords to film
 7. Open `http://127.0.0.1:5000` in browser
 
 ## 🔧 Environment Variables (config.py)
+- `PORT`: app listen port (default: `5000`)
 - `SECRET_KEY`: Flask session key (default: `change-this-secret-key`)
 - `OPENAI_BASE_URL`: LLM API base URL (recommended)
 - `OPENAI_API_KEY`: LLM API key (recommended)
@@ -72,6 +74,17 @@ Using this dataset for mapping keywords to film
 - `MAX_TOKENS`: integer, default `700`
 - `SYSTEM_PROMPT_PATH`: path to system prompt file (default `system-prompt.txt`)
 - `DATABASE_URL`: SQLAlchemy URL (default `sqlite:///movie_finder.db`)
+
+## 🧪 Local .env
+Use `.env` only for local development. Variables on server are injected by the platform.
+
+Example local `.env`:
+`OPENAI_API_KEY=your-token`
+`OPENAI_BASE_URL=https://kurim.ithope.eu/v1`
+
+`PORT` is read from environment and defaults to `5000`.
+
+`.env` must never be committed to git.
 
 ## 🗂️ DB Schema
 - `Chat`: id (UUID), client_id (browser session), title, created_at, updated_at
