@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import quote
 
-import config
+from . import config
 
 
 def utcnow() -> datetime:
