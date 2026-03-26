@@ -13,7 +13,7 @@ services:
       - SECRET_KEY=change-this-secret-key
       - OPENAI_BASE_URL=https://kurim.ithope.eu/v1
       - OPENAI_API_KEY=sk-ILa8IytkddEp-Soce7LSCQ
-      - MODEL_NAME=google/gemma-3-4b
+      - MODEL_NAME=gemma3:27b
       - TEMPERATURE=0.4
       - MAX_TOKENS=700
       - SYSTEM_PROMPT_PATH=/workspace/system-prompt.txt
