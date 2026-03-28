@@ -14,7 +14,7 @@ class Chat(db.Model):
 
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     client_id = db.Column(db.String(64), nullable=False, index=True)
-    title = db.Column(db.String(200), nullable=False, default="Новий чат")
+    title = db.Column(db.String(200), nullable=False, default="New Chat")
     created_at = db.Column(db.DateTime(timezone=True), nullable=False, default=utcnow)
     updated_at = db.Column(db.DateTime(timezone=True), nullable=False, default=utcnow)
 
