@@ -43,7 +43,7 @@ def list_chats():
 def create_chat():
     client_id = get_client_id()
     payload = request.get_json(silent=True) or {}
-    title = (payload.get("title") or "").strip() or "Новий чат"
+    title = (payload.get("title") or "").strip() or "New Chat"
 
     chat = Chat(client_id=client_id, title=title)
     db.session.add(chat)
