@@ -76,7 +76,7 @@ def get_chat_messages(chat_id: str):
 def suggest_chat_title(text: str, limit: int = 48) -> str:
     cleaned = re.sub(r"\s+", " ", text.strip())
     if not cleaned:
-        return "Новий чат"
+       return "New Chat"
     return cleaned[:limit] + ("…" if len(cleaned) > limit else "")
 
 
