@@ -116,7 +116,7 @@ def stream_chat(chat_id: str):
     user_db_message = Message(chat_id=chat.id, role="user", content=user_message)
     db.session.add(user_db_message)
 
-    if chat.title == "Новий чат":
+    if chat.title == "New Chat":
         chat.title = suggest_chat_title(user_message)
 
     chat.updated_at = utcnow()
